@@ -158,3 +158,23 @@ btnc.addEventListener('click', () => {
       }
   })
 })
+
+
+
+let conedorHora = document.getElementById("contenedorHora");
+const getTimeElements = async () => {
+
+  let response = await axios("http://worldtimeapi.org/api/timezone/America/Argentina")
+  let data = response.data.datetime;
+  let data2 = response.data.timezone;
+  let data3 = response.data.day_of_year;
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <p>Zona horaria: ${data2}</p>
+  <p>Fecha y Hora: ${data}</p>
+  <p>Dia del año: ${data3}</p>
+  `;
+  contenedorHora.append(div)
+};
+
+getTimeElements();
