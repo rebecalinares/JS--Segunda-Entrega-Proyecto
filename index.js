@@ -161,7 +161,7 @@ btnc.addEventListener('click', () => {
 
 
 
-let conedorHora = document.getElementById("contenedorHora");
+let contedorHora = document.getElementById("contenedorHora");
 const getTimeElements = async () => {
 
   let response = await axios("http://worldtimeapi.org/api/timezone/America/Argentina")
